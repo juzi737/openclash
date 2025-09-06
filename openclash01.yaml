@@ -25,7 +25,7 @@ dns:
 proxies:
 - name: SS-TRANSIT
   type: ss
-  server: 34.92.49.79
+  server: clash.lamer.cam
   port: 65531
   cipher: aes-128-gcm
   password: zHq42YWXMoIGgDRoR3ELDUwFaMS0icpBkxuJqlaEpG0=
