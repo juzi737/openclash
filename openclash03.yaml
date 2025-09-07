@@ -4,62 +4,24 @@ bind-address: '*'
 mode: rule
 log-level: info
 ipv6: false
-
-# —— 并发与嗅探优化 ——
-tcp-concurrent: true
-unified-delay: true
-profile:
-  store-selected: true
-sniffer:
-  enable: true
-  sniff:
-    - tls
-    - http
-  force-domain:
-    - +.netflix.com
-    - +.googlevideo.com
-
-# —— TUN 开启，提升转发兼容性 ——
-tun:
-  enable: true
-  stack: system
-  auto-route: true
-  auto-detect-interface: true
-  gso: true
-  mtu: 1500
-
 dns:
   enable: true
-  # 改为 127.0.0.1:7874，避免与 dnsmasq 争抢 53 端口
-  listen: 127.0.0.1:7874
+  listen: 0.0.0.0:53
   ipv6: false
   enhanced-mode: fake-ip
   nameserver:
-    - 114.114.114.114
-    - 223.5.5.5
+  - 114.114.114.114
+  - 223.5.5.5
   fallback:
-    - 8.8.8.8
-    - 1.1.1.1
+  - 8.8.8.8
+  - 1.1.1.1
   fallback-filter:
     geoip: true
     geoip-code: CN
   fake-ip-filter:
-    - '*.lan'
-    - '*.local'
-    - '*.localdomain'
-    - localhost
-    - 'time.*'
-    - 'ntp.*'
-    - '*.pool.ntp.org'
-    - 'connect.rom.miui.com'
-    - '*.msftconnecttest.com'
-    - '*.msftncsi.com'
-    - 'stun.*'
-    - 'heartbeat.belkin.com'
-    - 'router.asus.com'
-    - '*.tplinkwifi.net'
-    - 'miwifi.com'
-
+  - '*.lan'
+  - localhost
+  - '*.localdomain'
 proxies:
 - name: SS-TRANSIT
   type: ss
@@ -68,7 +30,6 @@ proxies:
   cipher: aes-128-gcm
   password: zHq42YWXMoIGgDRoR3ELDUwFaMS0icpBkxuJqlaEpG0=
   udp: true
-
 - name: SOCKS5-EXIT-01
   type: socks5
   server: 149.119.152.185
@@ -528,279 +489,401 @@ proxies:
 proxy-groups:
 - name: CHAIN-PHONE-01
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-01]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-01
 - name: CHAIN-PHONE-02
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-02]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-02
 - name: CHAIN-PHONE-03
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-03]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-03
 - name: CHAIN-PHONE-04
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-04]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-04
 - name: CHAIN-PHONE-05
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-05]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-05
 - name: CHAIN-PHONE-06
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-06]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-06
 - name: CHAIN-PHONE-07
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-07]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-07
 - name: CHAIN-PHONE-08
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-08]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-08
 - name: CHAIN-PHONE-09
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-09]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-09
 - name: CHAIN-PHONE-10
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-10]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-10
 - name: CHAIN-PHONE-11
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-11]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-11
 - name: CHAIN-PHONE-12
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-12]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-12
 - name: CHAIN-PHONE-13
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-13]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-13
 - name: CHAIN-PHONE-14
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-14]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-14
 - name: CHAIN-PHONE-15
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-15]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-15
 - name: CHAIN-PHONE-16
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-16]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-16
 - name: CHAIN-PHONE-17
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-17]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-17
 - name: CHAIN-PHONE-18
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-18]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-18
 - name: CHAIN-PHONE-19
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-19]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-19
 - name: CHAIN-PHONE-20
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-20]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-20
 - name: CHAIN-PHONE-21
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-21]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-21
 - name: CHAIN-PHONE-22
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-22]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-22
 - name: CHAIN-PHONE-23
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-23]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-23
 - name: CHAIN-PHONE-24
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-24]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-24
 - name: CHAIN-PHONE-25
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-25]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-25
 - name: CHAIN-PHONE-26
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-26]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-26
 - name: CHAIN-PHONE-27
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-27]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-27
 - name: CHAIN-PHONE-28
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-28]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-28
 - name: CHAIN-PHONE-29
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-29]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-29
 - name: CHAIN-PHONE-30
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-30]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-30
 - name: CHAIN-PHONE-31
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-31]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-31
 - name: CHAIN-PHONE-32
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-32]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-32
 - name: CHAIN-PHONE-33
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-33]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-33
 - name: CHAIN-PHONE-34
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-34]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-34
 - name: CHAIN-PHONE-35
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-35]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-35
 - name: CHAIN-PHONE-36
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-36]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-36
 - name: CHAIN-PHONE-37
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-37]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-37
 - name: CHAIN-PHONE-38
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-38]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-38
 - name: CHAIN-PHONE-39
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-39]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-39
 - name: CHAIN-PHONE-40
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-40]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-40
 - name: CHAIN-PHONE-41
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-41]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-41
 - name: CHAIN-PHONE-42
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-42]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-42
 - name: CHAIN-PHONE-43
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-43]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-43
 - name: CHAIN-PHONE-44
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-44]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-44
 - name: CHAIN-PHONE-45
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-45]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-45
 - name: CHAIN-PHONE-46
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-46]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-46
 - name: CHAIN-PHONE-47
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-47]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-47
 - name: CHAIN-PHONE-48
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-48]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-48
 - name: CHAIN-PHONE-49
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-49]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-49
 - name: CHAIN-PHONE-50
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-50]
-- name: CHAIN-PHONE-51
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-50- name: CHAIN-PHONE-51
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-51]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-51
 - name: CHAIN-PHONE-52
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-52]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-52
 - name: CHAIN-PHONE-53
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-53]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-53
 - name: CHAIN-PHONE-54
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-54]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-54
 - name: CHAIN-PHONE-55
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-55]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-55
 - name: CHAIN-PHONE-56
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-56]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-56
 - name: CHAIN-PHONE-57
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-57]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-57
 - name: CHAIN-PHONE-58
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-58]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-58
 - name: CHAIN-PHONE-59
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-59]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-59
 - name: CHAIN-PHONE-60
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-60]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-60
 - name: CHAIN-PHONE-61
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-61]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-61
 - name: CHAIN-PHONE-62
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-62]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-62
 - name: CHAIN-PHONE-63
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-63]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-63
 - name: CHAIN-PHONE-64
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-64]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-64
 - name: CHAIN-PHONE-65
   type: relay
-  proxies: [SS-TRANSIT, SOCKS5-EXIT-65]
+  proxies:
+  - SS-TRANSIT
+  - SOCKS5-EXIT-65
 
 - name: DEFAULT
   type: select
   proxies:
-    - CHAIN-PHONE-01
-    - CHAIN-PHONE-02
-    - CHAIN-PHONE-03
-    - CHAIN-PHONE-04
-    - CHAIN-PHONE-05
-    - CHAIN-PHONE-06
-    - CHAIN-PHONE-07
-    - CHAIN-PHONE-08
-    - CHAIN-PHONE-09
-    - CHAIN-PHONE-10
-    - CHAIN-PHONE-11
-    - CHAIN-PHONE-12
-    - CHAIN-PHONE-13
-    - CHAIN-PHONE-14
-    - CHAIN-PHONE-15
-    - CHAIN-PHONE-16
-    - CHAIN-PHONE-17
-    - CHAIN-PHONE-18
-    - CHAIN-PHONE-19
-    - CHAIN-PHONE-20
-    - CHAIN-PHONE-21
-    - CHAIN-PHONE-22
-    - CHAIN-PHONE-23
-    - CHAIN-PHONE-24
-    - CHAIN-PHONE-25
-    - CHAIN-PHONE-26
-    - CHAIN-PHONE-27
-    - CHAIN-PHONE-28
-    - CHAIN-PHONE-29
-    - CHAIN-PHONE-30
-    - CHAIN-PHONE-31
-    - CHAIN-PHONE-32
-    - CHAIN-PHONE-33
-    - CHAIN-PHONE-34
-    - CHAIN-PHONE-35
-    - CHAIN-PHONE-36
-    - CHAIN-PHONE-37
-    - CHAIN-PHONE-38
-    - CHAIN-PHONE-39
-    - CHAIN-PHONE-40
-    - CHAIN-PHONE-41
-    - CHAIN-PHONE-42
-    - CHAIN-PHONE-43
-    - CHAIN-PHONE-44
-    - CHAIN-PHONE-45
-    - CHAIN-PHONE-46
-    - CHAIN-PHONE-47
-    - CHAIN-PHONE-48
-    - CHAIN-PHONE-49
-    - CHAIN-PHONE-50
-    - CHAIN-PHONE-51
-    - CHAIN-PHONE-52
-    - CHAIN-PHONE-53
-    - CHAIN-PHONE-54
-    - CHAIN-PHONE-55
-    - CHAIN-PHONE-56
-    - CHAIN-PHONE-57
-    - CHAIN-PHONE-58
-    - CHAIN-PHONE-59
-    - CHAIN-PHONE-60
-    - CHAIN-PHONE-61
-    - CHAIN-PHONE-62
-    - CHAIN-PHONE-63
-    - CHAIN-PHONE-64
-    - CHAIN-PHONE-65
+  - CHAIN-PHONE-01
+  - CHAIN-PHONE-02
+  - CHAIN-PHONE-03
+  - CHAIN-PHONE-04
+  - CHAIN-PHONE-05
+  - CHAIN-PHONE-06
+  - CHAIN-PHONE-07
+  - CHAIN-PHONE-08
+  - CHAIN-PHONE-09
+  - CHAIN-PHONE-10
+  - CHAIN-PHONE-11
+  - CHAIN-PHONE-12
+  - CHAIN-PHONE-13
+  - CHAIN-PHONE-14
+  - CHAIN-PHONE-15
+  - CHAIN-PHONE-16
+  - CHAIN-PHONE-17
+  - CHAIN-PHONE-18
+  - CHAIN-PHONE-19
+  - CHAIN-PHONE-20
+  - CHAIN-PHONE-21
+  - CHAIN-PHONE-22
+  - CHAIN-PHONE-23
+  - CHAIN-PHONE-24
+  - CHAIN-PHONE-25
+  - CHAIN-PHONE-26
+  - CHAIN-PHONE-27
+  - CHAIN-PHONE-28
+  - CHAIN-PHONE-29
+  - CHAIN-PHONE-30
+  - CHAIN-PHONE-31
+  - CHAIN-PHONE-32
+  - CHAIN-PHONE-33
+  - CHAIN-PHONE-34
+  - CHAIN-PHONE-35
+  - CHAIN-PHONE-36
+  - CHAIN-PHONE-37
+  - CHAIN-PHONE-38
+  - CHAIN-PHONE-39
+  - CHAIN-PHONE-40
+  - CHAIN-PHONE-41
+  - CHAIN-PHONE-42
+  - CHAIN-PHONE-43
+  - CHAIN-PHONE-44
+  - CHAIN-PHONE-45
+  - CHAIN-PHONE-46
+  - CHAIN-PHONE-47
+  - CHAIN-PHONE-48
+  - CHAIN-PHONE-49
+  - CHAIN-PHONE-50
+  - CHAIN-PHONE-51
+  - CHAIN-PHONE-52
+  - CHAIN-PHONE-53
+  - CHAIN-PHONE-54
+  - CHAIN-PHONE-55
+  - CHAIN-PHONE-56
+  - CHAIN-PHONE-57
+  - CHAIN-PHONE-58
+  - CHAIN-PHONE-59
+  - CHAIN-PHONE-60
+  - CHAIN-PHONE-61
+  - CHAIN-PHONE-62
+  - CHAIN-PHONE-63
+  - CHAIN-PHONE-64
+  - CHAIN-PHONE-65
 
-    - DIRECT
-
+  - DIRECT
 rules:
-  # —— 本地网段优先直连，避免内网访问走代理 ——
-  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
-  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
-  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
-  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
-
-  # —— 50 台手机，固定 IP 分流到各自链式出口 ——
+  # 50 台手机，固定 IP 分流到各自链式出口
   - SRC-IP-CIDR,192.168.100.111/32,CHAIN-PHONE-01
   - SRC-IP-CIDR,192.168.100.112/32,CHAIN-PHONE-02
   - SRC-IP-CIDR,192.168.100.113/32,CHAIN-PHONE-03
