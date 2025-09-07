@@ -736,7 +736,7 @@ proxy-groups:
   type: relay
   proxies:
   - SS-TRANSIT
-  - CHAIN-PHONE-50
+  - SOCKS5-EXIT-50
 - name: CHAIN-PHONE-51
   type: relay
   proxies:
