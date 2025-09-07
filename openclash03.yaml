@@ -736,7 +736,8 @@ proxy-groups:
   type: relay
   proxies:
   - SS-TRANSIT
-  - SOCKS5-EXIT-50- name: CHAIN-PHONE-51
+  - CHAIN-PHONE-50
+- name: CHAIN-PHONE-51
   type: relay
   proxies:
   - SS-TRANSIT
@@ -880,7 +881,6 @@ proxy-groups:
   - CHAIN-PHONE-63
   - CHAIN-PHONE-64
   - CHAIN-PHONE-65
-
   - DIRECT
 rules:
   # 50 台手机，固定 IP 分流到各自链式出口
@@ -949,7 +949,6 @@ rules:
   - SRC-IP-CIDR,192.168.100.173/32,CHAIN-PHONE-63
   - SRC-IP-CIDR,192.168.100.174/32,CHAIN-PHONE-64
   - SRC-IP-CIDR,192.168.100.175/32,CHAIN-PHONE-65
-
 
   - GEOIP,CN,DIRECT
   - MATCH,DEFAULT
