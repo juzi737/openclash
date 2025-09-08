@@ -1,0 +1,693 @@
+mixed-port: 7890
+allow-lan: true
+bind-address: '*'
+mode: rule
+log-level: info
+ipv6: false
+
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  ipv6: false
+  enhanced-mode: fake-ip
+  nameserver:
+  - 114.114.114.114
+  - 223.5.5.5
+  fallback:
+  - 8.8.8.8
+  - 1.1.1.1
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+  fake-ip-filter:
+  - '*.lan'
+  - localhost
+  - '*.localdomain'
+
+proxies:
+  - name: 01
+    type: ss
+    server: clash2.lamer.cam
+    port: 65531
+    cipher: aes-128-gcm
+    password: zHq42YWXMoIGgDRoR3ELDUwFaMS0icpBkxuJqlaEpG0=
+    udp: true
+
+  - name: SOCKS5-EXIT-01
+    type: socks5
+    server: 149.119.152.185
+    port: 443
+    username: Etxd89017
+    password: UODkqkDE
+    udp: true
+
+  - name: SOCKS5-EXIT-02
+    type: socks5
+    server: 149.119.167.236
+    port: 443
+    username: HZZZ89017
+    password: rdCDFupa
+    udp: true
+
+  - name: SOCKS5-EXIT-03
+    type: socks5
+    server: 149.119.167.192
+    port: 443
+    username: Z1ue89017
+    password: QiJjkZSp
+    udp: true
+
+  - name: SOCKS5-EXIT-04
+    type: socks5
+    server: 149.119.167.183
+    port: 443
+    username: Y4EF89017
+    password: q6M9UiGX
+    udp: true
+
+  - name: SOCKS5-EXIT-05
+    type: socks5
+    server: 149.119.167.178
+    port: 443
+    username: 7Dek89017
+    password: R7kEgBBe
+    udp: true
+
+  - name: SOCKS5-EXIT-06
+    type: socks5
+    server: 149.119.167.162
+    port: 443
+    username: L7SB89017
+    password: 6A1VgPZs
+    udp: true
+
+  - name: SOCKS5-EXIT-07
+    type: socks5
+    server: 149.119.167.123
+    port: 443
+    username: xn2589017
+    password: 8W95tgTZ
+    udp: true
+
+  - name: SOCKS5-EXIT-08
+    type: socks5
+    server: 149.119.167.116
+    port: 443
+    username: w2ki89017
+    password: 12ahHW1M
+    udp: true
+
+  - name: SOCKS5-EXIT-09
+    type: socks5
+    server: 149.119.167.37
+    port: 443
+    username: KNGc89017
+    password: mXagVmCb
+    udp: true
+
+  - name: SOCKS5-EXIT-10
+    type: socks5
+    server: 149.119.167.25
+    port: 443
+    username: eOEZ89017
+    password: 4AC8SWU5
+    udp: true
+
+  - name: SOCKS5-EXIT-11
+    type: socks5
+    server: 149.119.167.21
+    port: 443
+    username: R6VH89017
+    password: P6gyr4v3
+    udp: true
+
+  - name: SOCKS5-EXIT-12
+    type: socks5
+    server: 149.119.134.231
+    port: 443
+    username: L3fn89017
+    password: r2dNBzKA
+    udp: true
+
+  - name: SOCKS5-EXIT-13
+    type: socks5
+    server: 149.119.134.218
+    port: 443
+    username: CqqW89017
+    password: npaxj3qY
+    udp: true
+
+  - name: SOCKS5-EXIT-14
+    type: socks5
+    server: 149.119.134.206
+    port: 443
+    username: 3sLh89017
+    password: eOjsRe4j
+    udp: true
+
+  - name: SOCKS5-EXIT-15
+    type: socks5
+    server: 149.119.134.92
+    port: 443
+    username: xLPh89017
+    password: t7bRy2EB
+    udp: true
+
+  - name: SOCKS5-EXIT-16
+    type: socks5
+    server: 149.119.133.124
+    port: 443
+    username: g3gp89017
+    password: XaVt8nwA
+    udp: true
+
+  - name: SOCKS5-EXIT-17
+    type: socks5
+    server: 149.119.133.82
+    port: 443
+    username: QW7s89017
+    password: pxM6cs5z
+    udp: true
+
+  - name: SOCKS5-EXIT-18
+    type: socks5
+    server: 149.119.188.28
+    port: 443
+    username: dM9i89017
+    password: Xp28kOAB
+    udp: true
+
+  - name: SOCKS5-EXIT-19
+    type: socks5
+    server: 38.125.47.220
+    port: 443
+    username: akNK89017
+    password: U8YnKrUO
+    udp: true
+
+  - name: SOCKS5-EXIT-20
+    type: socks5
+    server: 38.125.1.62
+    port: 443
+    username: vMLq89017
+    password: RtVLjNTA
+    udp: true
+
+  - name: SOCKS5-EXIT-21
+    type: socks5
+    server: 116.124.248.230
+    port: 443
+    username: wD4m89017
+    password: wcY1SbNk
+    udp: true
+
+  - name: SOCKS5-EXIT-22
+    type: socks5
+    server: 116.124.248.104
+    port: 443
+    username: UXGa89017
+    password: GuEueqsB
+    udp: true
+
+  - name: SOCKS5-EXIT-23
+    type: socks5
+    server: 116.124.248.254
+    port: 443
+    username: mjNU89017
+    password: cU5By3mZ
+    udp: true
+
+  - name: SOCKS5-EXIT-24
+    type: socks5
+    server: 116.124.248.251
+    port: 443
+    username: mJq289017
+    password: fSry3k5u
+    udp: true
+
+  - name: SOCKS5-EXIT-25
+    type: socks5
+    server: 116.124.248.250
+    port: 443
+    username: SBNz89017
+    password: P57UL9YM
+    udp: true
+
+  - name: SOCKS5-EXIT-26
+    type: socks5
+    server: 116.124.248.236
+    port: 443
+    username: R5HE89017
+    password: XHLxKB31
+    udp: true
+
+  - name: SOCKS5-EXIT-27
+    type: socks5
+    server: 116.124.248.233
+    port: 443
+    username: xOmj89017
+    password: ajXSrk9J
+    udp: true
+
+  - name: SOCKS5-EXIT-28
+    type: socks5
+    server: 116.124.248.212
+    port: 443
+    username: VH4N89017
+    password: 3eTPkyBt
+    udp: true
+
+  - name: SOCKS5-EXIT-29
+    type: socks5
+    server: 116.124.248.195
+    port: 443
+    username: ajid89017
+    password: Vur7W65u
+    udp: true
+
+  - name: SOCKS5-EXIT-30
+    type: socks5
+    server: 116.124.248.181
+    port: 443
+    username: gPrt89017
+    password: T3kLYF8b
+    udp: true
+
+  - name: SOCKS5-EXIT-31
+    type: socks5
+    server: 116.124.248.172
+    port: 443
+    username: 4RAj89017
+    password: KOJE9fFk
+    udp: true
+
+  - name: SOCKS5-EXIT-32
+    type: socks5
+    server: 116.124.248.168
+    port: 443
+    username: ZKfP89017
+    password: gfUzaqVS
+    udp: true
+
+  - name: SOCKS5-EXIT-33
+    type: socks5
+    server: 116.124.248.160
+    port: 443
+    username: CF2U89017
+    password: zV1aSQmP
+    udp: true
+
+  - name: SOCKS5-EXIT-34
+    type: socks5
+    server: 116.124.248.156
+    port: 443
+    username: Qe4j89017
+    password: VzLtm3WM
+    udp: true
+
+  - name: SOCKS5-EXIT-35
+    type: socks5
+    server: 116.124.248.154
+    port: 443
+    username: EbZP89017
+    password: 5hCc75YE
+    udp: true
+
+  - name: SOCKS5-EXIT-36
+    type: socks5
+    server: 116.124.248.137
+    port: 443
+    username: S3D189017
+    password: MnM2XDm3
+    udp: true
+
+  - name: SOCKS5-EXIT-37
+    type: socks5
+    server: 116.124.248.135
+    port: 443
+    username: yOZF89017
+    password: Gk3jt8wE
+    udp: true
+
+  - name: SOCKS5-EXIT-38
+    type: socks5
+    server: 116.124.248.113
+    port: 443
+    username: NHtw89017
+    password: eu5uK7QB
+    udp: true
+
+  - name: SOCKS5-EXIT-39
+    type: socks5
+    server: 116.124.248.110
+    port: 443
+    username: qjH289017
+    password: 6f5uVTy4
+    udp: true
+
+  - name: SOCKS5-EXIT-40
+    type: socks5
+    server: 116.124.248.106
+    port: 443
+    username: 1hya89017
+    password: g5m7hWLF
+    udp: true
+
+  - name: SOCKS5-EXIT-41
+    type: socks5
+    server: 116.124.248.102
+    port: 443
+    username: 9gfa89017
+    password: VzHiguZH
+    udp: true
+
+  - name: SOCKS5-EXIT-42
+    type: socks5
+    server: 116.124.248.98
+    port: 443
+    username: Wz6G89017
+    password: bWtZya94
+    udp: true
+
+  - name: SOCKS5-EXIT-43
+    type: socks5
+    server: 116.124.248.97
+    port: 443
+    username: NAee89017
+    password: BLkVgDff
+    udp: true
+
+  - name: SOCKS5-EXIT-44
+    type: socks5
+    server: 116.124.248.90
+    port: 443
+    username: Ffvk89017
+    password: h8OdRtHR
+    udp: true
+
+  - name: SOCKS5-EXIT-45
+    type: socks5
+    server: 116.124.248.89
+    port: 443
+    username: iXtJ89017
+    password: jSMe4FPC
+    udp: true
+
+  - name: SOCKS5-EXIT-46
+    type: socks5
+    server: 116.124.248.88
+    port: 443
+    username: TYCW89017
+    password: 1tDke3zE
+    udp: true
+
+  - name: SOCKS5-EXIT-47
+    type: socks5
+    server: 116.124.248.87
+    port: 443
+    username: bW2a89017
+    password: fZHcZ5pV
+    udp: true
+
+  - name: SOCKS5-EXIT-48
+    type: socks5
+    server: 116.124.248.82
+    port: 443
+    username: nOKp89017
+    password: JDcCqu2q
+    udp: true
+
+  - name: SOCKS5-EXIT-49
+    type: socks5
+    server: 116.124.248.70
+    port: 443
+    username: AVRe89017
+    password: EOecLfjb
+    udp: true
+
+  - name: SOCKS5-EXIT-50
+    type: socks5
+    server: 116.124.248.62
+    port: 443
+    username: 349n89017
+    password: mO1JUMOx
+    udp: true
+
+proxy-groups:
+  - name: CHAIN-PHONE-01
+    type: relay
+    proxies: [01, SOCKS5-EXIT-01]
+  - name: CHAIN-PHONE-02
+    type: relay
+    proxies: [01, SOCKS5-EXIT-02]
+  - name: CHAIN-PHONE-03
+    type: relay
+    proxies: [01, SOCKS5-EXIT-03]
+  - name: CHAIN-PHONE-04
+    type: relay
+    proxies: [01, SOCKS5-EXIT-04]
+  - name: CHAIN-PHONE-05
+    type: relay
+    proxies: [01, SOCKS5-EXIT-05]
+  - name: CHAIN-PHONE-06
+    type: relay
+    proxies: [01, SOCKS5-EXIT-06]
+  - name: CHAIN-PHONE-07
+    type: relay
+    proxies: [01, SOCKS5-EXIT-07]
+  - name: CHAIN-PHONE-08
+    type: relay
+    proxies: [01, SOCKS5-EXIT-08]
+  - name: CHAIN-PHONE-09
+    type: relay
+    proxies: [01, SOCKS5-EXIT-09]
+  - name: CHAIN-PHONE-10
+    type: relay
+    proxies: [01, SOCKS5-EXIT-10]
+  - name: CHAIN-PHONE-11
+    type: relay
+    proxies: [01, SOCKS5-EXIT-11]
+  - name: CHAIN-PHONE-12
+    type: relay
+    proxies: [01, SOCKS5-EXIT-12]
+  - name: CHAIN-PHONE-13
+    type: relay
+    proxies: [01, SOCKS5-EXIT-13]
+  - name: CHAIN-PHONE-14
+    type: relay
+    proxies: [01, SOCKS5-EXIT-14]
+  - name: CHAIN-PHONE-15
+    type: relay
+    proxies: [01, SOCKS5-EXIT-15]
+  - name: CHAIN-PHONE-16
+    type: relay
+    proxies: [01, SOCKS5-EXIT-16]
+  - name: CHAIN-PHONE-17
+    type: relay
+    proxies: [01, SOCKS5-EXIT-17]
+  - name: CHAIN-PHONE-18
+    type: relay
+    proxies: [01, SOCKS5-EXIT-18]
+  - name: CHAIN-PHONE-19
+    type: relay
+    proxies: [01, SOCKS5-EXIT-19]
+  - name: CHAIN-PHONE-20
+    type: relay
+    proxies: [01, SOCKS5-EXIT-20]
+  - name: CHAIN-PHONE-21
+    type: relay
+    proxies: [01, SOCKS5-EXIT-21]
+  - name: CHAIN-PHONE-22
+    type: relay
+    proxies: [01, SOCKS5-EXIT-22]
+  - name: CHAIN-PHONE-23
+    type: relay
+    proxies: [01, SOCKS5-EXIT-23]
+  - name: CHAIN-PHONE-24
+    type: relay
+    proxies: [01, SOCKS5-EXIT-24]
+  - name: CHAIN-PHONE-25
+    type: relay
+    proxies: [01, SOCKS5-EXIT-25]
+  - name: CHAIN-PHONE-26
+    type: relay
+    proxies: [01, SOCKS5-EXIT-26]
+  - name: CHAIN-PHONE-27
+    type: relay
+    proxies: [01, SOCKS5-EXIT-27]
+  - name: CHAIN-PHONE-28
+    type: relay
+    proxies: [01, SOCKS5-EXIT-28]
+  - name: CHAIN-PHONE-29
+    type: relay
+    proxies: [01, SOCKS5-EXIT-29]
+  - name: CHAIN-PHONE-30
+    type: relay
+    proxies: [01, SOCKS5-EXIT-30]
+  - name: CHAIN-PHONE-31
+    type: relay
+    proxies: [01, SOCKS5-EXIT-31]
+  - name: CHAIN-PHONE-32
+    type: relay
+    proxies: [01, SOCKS5-EXIT-32]
+  - name: CHAIN-PHONE-33
+    type: relay
+    proxies: [01, SOCKS5-EXIT-33]
+  - name: CHAIN-PHONE-34
+    type: relay
+    proxies: [01, SOCKS5-EXIT-34]
+  - name: CHAIN-PHONE-35
+    type: relay
+    proxies: [01, SOCKS5-EXIT-35]
+  - name: CHAIN-PHONE-36
+    type: relay
+    proxies: [01, SOCKS5-EXIT-36]
+  - name: CHAIN-PHONE-37
+    type: relay
+    proxies: [01, SOCKS5-EXIT-37]
+  - name: CHAIN-PHONE-38
+    type: relay
+    proxies: [01, SOCKS5-EXIT-38]
+  - name: CHAIN-PHONE-39
+    type: relay
+    proxies: [01, SOCKS5-EXIT-39]
+  - name: CHAIN-PHONE-40
+    type: relay
+    proxies: [01, SOCKS5-EXIT-40]
+  - name: CHAIN-PHONE-41
+    type: relay
+    proxies: [01, SOCKS5-EXIT-41]
+  - name: CHAIN-PHONE-42
+    type: relay
+    proxies: [01, SOCKS5-EXIT-42]
+  - name: CHAIN-PHONE-43
+    type: relay
+    proxies: [01, SOCKS5-EXIT-43]
+  - name: CHAIN-PHONE-44
+    type: relay
+    proxies: [01, SOCKS5-EXIT-44]
+  - name: CHAIN-PHONE-45
+    type: relay
+    proxies: [01, SOCKS5-EXIT-45]
+  - name: CHAIN-PHONE-46
+    type: relay
+    proxies: [01, SOCKS5-EXIT-46]
+  - name: CHAIN-PHONE-47
+    type: relay
+    proxies: [01, SOCKS5-EXIT-47]
+  - name: CHAIN-PHONE-48
+    type: relay
+    proxies: [01, SOCKS5-EXIT-48]
+  - name: CHAIN-PHONE-49
+    type: relay
+    proxies: [01, SOCKS5-EXIT-49]
+  - name: CHAIN-PHONE-50
+    type: relay
+    proxies: [01, SOCKS5-EXIT-50]
+  - name: DEFAULT
+    type: select
+    proxies:
+      - CHAIN-PHONE-01
+      - CHAIN-PHONE-02
+      - CHAIN-PHONE-03
+      - CHAIN-PHONE-04
+      - CHAIN-PHONE-05
+      - CHAIN-PHONE-06
+      - CHAIN-PHONE-07
+      - CHAIN-PHONE-08
+      - CHAIN-PHONE-09
+      - CHAIN-PHONE-10
+      - CHAIN-PHONE-11
+      - CHAIN-PHONE-12
+      - CHAIN-PHONE-13
+      - CHAIN-PHONE-14
+      - CHAIN-PHONE-15
+      - CHAIN-PHONE-16
+      - CHAIN-PHONE-17
+      - CHAIN-PHONE-18
+      - CHAIN-PHONE-19
+      - CHAIN-PHONE-20
+      - CHAIN-PHONE-21
+      - CHAIN-PHONE-22
+      - CHAIN-PHONE-23
+      - CHAIN-PHONE-24
+      - CHAIN-PHONE-25
+      - CHAIN-PHONE-26
+      - CHAIN-PHONE-27
+      - CHAIN-PHONE-28
+      - CHAIN-PHONE-29
+      - CHAIN-PHONE-30
+      - CHAIN-PHONE-31
+      - CHAIN-PHONE-32
+      - CHAIN-PHONE-33
+      - CHAIN-PHONE-34
+      - CHAIN-PHONE-35
+      - CHAIN-PHONE-36
+      - CHAIN-PHONE-37
+      - CHAIN-PHONE-38
+      - CHAIN-PHONE-39
+      - CHAIN-PHONE-40
+      - CHAIN-PHONE-41
+      - CHAIN-PHONE-42
+      - CHAIN-PHONE-43
+      - CHAIN-PHONE-44
+      - CHAIN-PHONE-45
+      - CHAIN-PHONE-46
+      - CHAIN-PHONE-47
+      - CHAIN-PHONE-48
+      - CHAIN-PHONE-49
+      - CHAIN-PHONE-50
+      - DIRECT
+rules:
+  - SRC-IP-CIDR,192.168.100.111/32,CHAIN-PHONE-01
+  - SRC-IP-CIDR,192.168.100.112/32,CHAIN-PHONE-02
+  - SRC-IP-CIDR,192.168.100.113/32,CHAIN-PHONE-03
+  - SRC-IP-CIDR,192.168.100.114/32,CHAIN-PHONE-04
+  - SRC-IP-CIDR,192.168.100.115/32,CHAIN-PHONE-05
+  - SRC-IP-CIDR,192.168.100.116/32,CHAIN-PHONE-06
+  - SRC-IP-CIDR,192.168.100.117/32,CHAIN-PHONE-07
+  - SRC-IP-CIDR,192.168.100.118/32,CHAIN-PHONE-08
+  - SRC-IP-CIDR,192.168.100.119/32,CHAIN-PHONE-09
+  - SRC-IP-CIDR,192.168.100.120/32,CHAIN-PHONE-10
+  - SRC-IP-CIDR,192.168.100.121/32,CHAIN-PHONE-11
+  - SRC-IP-CIDR,192.168.100.122/32,CHAIN-PHONE-12
+  - SRC-IP-CIDR,192.168.100.123/32,CHAIN-PHONE-13
+  - SRC-IP-CIDR,192.168.100.124/32,CHAIN-PHONE-14
+  - SRC-IP-CIDR,192.168.100.125/32,CHAIN-PHONE-15
+  - SRC-IP-CIDR,192.168.100.126/32,CHAIN-PHONE-16
+  - SRC-IP-CIDR,192.168.100.127/32,CHAIN-PHONE-17
+  - SRC-IP-CIDR,192.168.100.128/32,CHAIN-PHONE-18
+  - SRC-IP-CIDR,192.168.100.129/32,CHAIN-PHONE-19
+  - SRC-IP-CIDR,192.168.100.130/32,CHAIN-PHONE-20
+  - SRC-IP-CIDR,192.168.100.131/32,CHAIN-PHONE-21
+  - SRC-IP-CIDR,192.168.100.132/32,CHAIN-PHONE-22
+  - SRC-IP-CIDR,192.168.100.133/32,CHAIN-PHONE-23
+  - SRC-IP-CIDR,192.168.100.134/32,CHAIN-PHONE-24
+  - SRC-IP-CIDR,192.168.100.135/32,CHAIN-PHONE-25
+  - SRC-IP-CIDR,192.168.100.136/32,CHAIN-PHONE-26
+  - SRC-IP-CIDR,192.168.100.137/32,CHAIN-PHONE-27
+  - SRC-IP-CIDR,192.168.100.138/32,CHAIN-PHONE-28
+  - SRC-IP-CIDR,192.168.100.139/32,CHAIN-PHONE-29
+  - SRC-IP-CIDR,192.168.100.140/32,CHAIN-PHONE-30
+  - SRC-IP-CIDR,192.168.100.141/32,CHAIN-PHONE-31
+  - SRC-IP-CIDR,192.168.100.142/32,CHAIN-PHONE-32
+  - SRC-IP-CIDR,192.168.100.143/32,CHAIN-PHONE-33
+  - SRC-IP-CIDR,192.168.100.144/32,CHAIN-PHONE-34
+  - SRC-IP-CIDR,192.168.100.145/32,CHAIN-PHONE-35
+  - SRC-IP-CIDR,192.168.100.146/32,CHAIN-PHONE-36
+  - SRC-IP-CIDR,192.168.100.147/32,CHAIN-PHONE-37
+  - SRC-IP-CIDR,192.168.100.148/32,CHAIN-PHONE-38
+  - SRC-IP-CIDR,192.168.100.149/32,CHAIN-PHONE-39
+  - SRC-IP-CIDR,192.168.100.150/32,CHAIN-PHONE-40
+  - SRC-IP-CIDR,192.168.100.151/32,CHAIN-PHONE-41
+  - SRC-IP-CIDR,192.168.100.152/32,CHAIN-PHONE-42
+  - SRC-IP-CIDR,192.168.100.153/32,CHAIN-PHONE-43
+  - SRC-IP-CIDR,192.168.100.154/32,CHAIN-PHONE-44
+  - SRC-IP-CIDR,192.168.100.155/32,CHAIN-PHONE-45
+  - SRC-IP-CIDR,192.168.100.156/32,CHAIN-PHONE-46
+  - SRC-IP-CIDR,192.168.100.157/32,CHAIN-PHONE-47
+  - SRC-IP-CIDR,192.168.100.158/32,CHAIN-PHONE-48
+  - SRC-IP-CIDR,192.168.100.159/32,CHAIN-PHONE-49
+  - SRC-IP-CIDR,192.168.100.160/32,CHAIN-PHONE-50
+  - GEOIP,CN,DIRECT
+  - MATCH,DEFAULT
